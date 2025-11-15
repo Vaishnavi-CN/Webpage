@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<events>
+  <event type="Conference">
+    <date>2025-12-05</date>
+    <time>10:00 AM</time>
+    <location>Head Office Auditorium</location>
+    <description>A practical session to help you quickly understand and apply core web development skills.</description>
+  </event>
+
+  <event type="Training">
+    <date>2025-12-12</date>
+    <time>02:00 PM</time>
+    <location>Seminar Hall - B</location>
+    <description>A guided training that teaches you how to build and structure real web projects with confidence.</description>
+  </event>
+
+  <event type="Social">
+    <date>2025-12-20</date>
+    <time>10:00 AM</time>
+    <location>Auditorium</location>
+    <description>A creative coding challenge where teams collaborate to develop innovative ideas.</description>
+  </event>
+
+  <event type="Meeting">
+    <date>2026-01-08</date>
+    <time>09:00 AM</time>
+    <location>Conference Room - A</location>
+    <description>Review ongoing tasks and focused on meeting assess project progress and plan the next steps clearly.</description>
+  </event>
+</events>

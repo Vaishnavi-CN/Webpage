@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Company Events</title>
+  <link rel="stylesheet" href="work1.css">
+</head>
+
+<body>
+  <header>
+    <h1>SAYLAS Technologies Private Limited</h1>
+    <h3>Upcoming Company Events</h3>
+  </header>
+
+  <section class="events-container">
+    <div class="event conference">
+      <h2>Hands-on Webinar on Web Development</h2>
+      <p><strong>Date:</strong> 2025-12-05</p>
+      <p><strong>Time:</strong> 10:00 AM</p>
+      <p><strong>Location:</strong> Head Office Auditorium</p>
+      <p><strong>Description:</strong> A practical session to help you quickly understand and apply core web development skills.</p>
+    </div>
+
+    <div class="event training">
+      <h2>Web Development Training</h2>
+      <p><strong>Date:</strong> 2025-12-12</p>
+      <p><strong>Time:</strong> 02:00 PM</p>
+      <p><strong>Location:</strong> Seminar Hall - B</p>
+      <p><strong>Description:</strong> A guided training that teaches you how to build and structure real web projects with confidence.</p>
+    </div>
+
+    <div class="social event">
+      <h2>Internal Hackathon</h2>
+      <p><strong>Date:</strong> 2025-12-20</p>
+      <p><strong>Time:</strong> 10:00 AM</p>
+      <p><strong>Location:</strong> Auditorium</p>
+      <p><strong>Description:</strong> A creative coding challenge where teams collaborate to develop innovative ideas.</p>
+    </div>
+
+    <div class="event meeting">
+      <h2>Progress Review Meeting</h2>
+      <p><strong>Date:</strong> 2026-01-08</p>
+      <p><strong>Time:</strong> 09:00 AM</p>
+      <p><strong>Location:</strong> Conference Room - A</p>
+      <p><strong>Description:</strong> Review ongoing tasks and focused on meeting assess project progress and plan the next steps clearly.</p>
+    </div>
+  </section>
+
+<section id="events">
+  <h2>Upcoming Events</h2>
+  <table id="eventTable" border="1" cellspacing="0" cellpadding="10">
+    <tr><th>Type</th><th>Date</th><th>Time</th><th>Location</th><th>Description</th></tr>
+  </table>
+</section>
+
+<script>
+fetch("work2.xml")
+  .then(r => r.text())
+  .then(str => (new window.DOMParser()).parseFromString(str, "text/xml"))
+  .then(data => {
+    let events = data.getElementsByTagName("event");
+    let table = document.getElementById("eventTable");
+
+    for (let ev of events) {
+      let type = ev.getAttribute("type");
+      let date = ev.getElementsByTagName("date")[0].textContent;
+      let time = ev.getElementsByTagName("time")[0].textContent;
+      let loc = ev.getElementsByTagName("location")[0].textContent;
+      let desc = ev.getElementsByTagName("description")[0].textContent;
+
+      let row = document.createElement("tr");
+      row.innerHTML = `<td>${type}</td><td>${date}</td><td>${time}</td><td>${loc}</td><td>${desc}</td>`;
+      table.appendChild(row);
+    }
+  });
+</script>
+
+</body>
+</html>

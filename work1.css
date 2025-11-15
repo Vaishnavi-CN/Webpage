@@ -1,0 +1,217 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  background-image: url('bg1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Header Styling */
+header {
+  text-align: center;
+  background: rgba(30, 30, 124, 0.5);
+  color: white;
+  padding: 30px 0;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+}
+
+h2{
+  color:rgb(26, 30, 135);
+}
+/* Event Container */
+.events-container {
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual Event Card */
+.event {
+  background-image: url('original.jpg');
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.event:hover {
+  transform: translateY(-5px);
+}
+
+/* Headings */
+.event h2 {
+  margin-top: 0;
+  font-size: 1.3em;
+  border-bottom: 2px solid #090909;
+  padding-bottom: 8px;
+}
+
+/* Event Type Color Coding */
+.conference {
+  border-left: 6px solid steelblue;
+}
+
+.training {
+  border-left: 6px solid mediumseagreen;
+}
+
+.social {
+  border-left: 6px solid orange;
+}
+
+.meeting {
+  border-left: 6px solid mediumvioletred;
+}
+
+/* Events section & table styles */
+#events {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 10px;
+  text-align: center;
+}
+
+#events h2 {
+  color: #fff;
+  font-size: 1.6em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 14px 0;
+  padding-bottom: 8px;
+  display: inline-block;
+  border-bottom: 3px solid rgba(255,255,255,0.12);
+}
+
+/* Table base */
+#eventTable {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 860px;
+  max-width: 100%;
+  background: rgba(0,0,0,0.35);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+#eventTable th {
+  background: rgba(0,0,0,0.55);
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  padding: 12px;
+}
+
+#eventTable th, #eventTable td {
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+#eventTable td {
+  padding: 12px;
+  vertical-align: middle;
+  word-break: break-word;
+}
+
+/* Column sizing */
+#eventTable th:nth-child(1), #eventTable td:nth-child(1) {
+  width: 120px; /* Type */
+  text-align: center;
+}
+
+#eventTable th:nth-child(2), #eventTable td:nth-child(2) {
+  width: 160px; /* Date */
+  text-align: center;
+  white-space: nowrap;
+}
+
+#eventTable th:nth-child(3), #eventTable td:nth-child(3) {
+  width: 120px; /* Time */
+  text-align: center;
+  white-space: nowrap;
+}
+
+#eventTable th:nth-child(4), #eventTable td:nth-child(4) {
+  width: 220px; /* Location */
+  text-align: left;
+}
+
+#eventTable th:nth-child(5), #eventTable td:nth-child(5) {
+  /* Description */
+  text-align: left;
+}
+
+/* Zebra rows for readability */
+#eventTable tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.03);
+}
+
+/* Responsive: allow full width on small screens */
+@media (max-width: 920px) {
+  #eventTable {
+    width: 100%;
+  }
+
+  #eventTable th, #eventTable td {
+    padding: 10px;
+    font-size: 0.95em;
+  }
+}
+
+
+
+/* keeps table small and neat */
+#eventTable {
+  width: auto;              
+  max-width: 100%;
+  table-layout: auto;        
+  font-size: 0.95em;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.18);
+  box-shadow: none;         
+  border-radius: 6px;
+}
+
+#eventTable th, #eventTable td {
+  padding: 8px 10px;        
+  vertical-align: middle;
+}
+
+/* Remove forced widths from previous rules so the table sizes to text */
+#eventTable th:nth-child(1), #eventTable td:nth-child(1),
+#eventTable th:nth-child(2), #eventTable td:nth-child(2),
+#eventTable th:nth-child(3), #eventTable td:nth-child(3),
+#eventTable th:nth-child(4), #eventTable td:nth-child(4),
+#eventTable th:nth-child(5), #eventTable td:nth-child(5) {
+  width: auto;
+}
+
+/* Give description column a sensible max width so text wraps neatly */
+#eventTable td:nth-child(5) {
+  max-width: 360px;
+  white-space: normal;
+}
+
+/* hover highlight to help scan rows */
+#eventTable tbody tr:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+@media (max-width: 640px) {
+  #eventTable, #eventTable th, #eventTable td { font-size: 0.9em; }
+  #eventTable td { padding: 7px 8px; }
+}
+
+/* Ensure table text is white for good contrast */
+#eventTable, #eventTable th, #eventTable td {
+  color: #fff !important;
+}
